@@ -11,4 +11,15 @@ bot.on('ready', () => {
   bot.logger.info('Logged in as: ' + bot.raw.user.name || bot.raw.user.id);
 });
 
+bot.command(
+  'ping',
+  {
+    'aliases': ['pong', 'pung'],
+    'description': 'Ping the bot',
+  },
+  async (ctx) => {
+    await ctx.reply('Pong!');
+  },
+);
+
 bot.launch();
