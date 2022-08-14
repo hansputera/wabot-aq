@@ -1,3 +1,14 @@
-import process from 'process';
+import { Client } from 'gampang';
+import config from '../config';
 
-process.stdout.write('Hello World!');
+const bot = new Client(config.sessionPath, {
+  'qr': config.qr,
+  'prefixes': config.prefixes,
+});
+
+bot.on('ready', () => {
+  bot.logger.info('Bot is ready to use!');
+  bot.logger.info('Logged in as: ' + bot.raw.user.name || bot.raw.user.id);
+});
+
+bot.launch();
