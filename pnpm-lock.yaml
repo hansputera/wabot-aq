@@ -10,6 +10,7 @@ specifiers:
   gampang: 1.0.1-beta.3
   husky: ^8.0.1
   prettier: ^2.7.1
+  rimraf: ^3.0.2
 
 dependencies:
   gampang: 1.0.1-beta.3
@@ -23,6 +24,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   husky: 8.0.1
   prettier: 2.7.1
+  rimraf: 3.0.2
 
 packages:
 

@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "lint": "eslint \"**/*.js\" --fix",
     "format": "prettier . --write",
-    "build": "babel src -d dist"
+    "build": "rimraf dist && babel src -d dist"
   },
   "keywords": [
     "termux-whatsapp-bot",
@@ -43,7 +43,8 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "gampang": "1.0.1-beta.3"
