@@ -1,0 +1,48 @@
+{
+  "name": "wabot-aq",
+  "version": "3.0.0",
+  "description": "wabot-aq next generation",
+  "main": "./index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint \"**/*.js\" --fix",
+    "format": "prettier . --write",
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "termux-whatsapp-bot",
+    "whatsapp-bot",
+    "whatsapp",
+    "js-whatsapp"
+  ],
+  "homepage": "https://github.com/hansputera/wabot-aq",
+  "author": {
+    "name": "Nurutomo"
+  },
+  "license": "GPL-3.0-or-later",
+  "maintainers": [
+    "hansputera"
+  ],
+  "contributors": [
+    "Nurutomo",
+    "ariffb25",
+    "Ftwrr"
+  ],
+  "repository": {
+    "url": "https://github.com/hansputera/wabot-aq",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/hansputera/wabot-aq/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
+  }
+}

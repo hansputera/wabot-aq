@@ -1,6 +1,9 @@
 # Node.js Modules
 node_modules
 
+# Compiled
+dist
+
 # vim state
 .*.swp
 
