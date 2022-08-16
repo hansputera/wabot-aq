@@ -1,6 +1,9 @@
 # Node.js Modules
 node_modules
 
+# qr code
+qr.png
+
 # Compiled
 dist
 

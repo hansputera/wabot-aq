@@ -7,7 +7,8 @@
     "prepare": "husky install",
     "lint": "eslint \"**/*.js\" --fix",
     "format": "prettier . --write",
-    "build": "rimraf dist && babel src -d dist"
+    "build": "rimraf dist && babel src -d dist",
+    "watch": "nodemon"
   },
   "keywords": [
     "termux-whatsapp-bot",
@@ -39,14 +40,26 @@
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
-    "eslint": ">=5.16.0",
+    "eslint": "^8.22.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
+    "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "gampang": "1.0.1-beta.3"
+    "gampang": "1.0.1-beta.5"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/**/*",
+      "dist/**/*"
+    ],
+    "exec": "npm run build && node dist/main.js",
+    "watch": [
+      "src/commands/**/*"
+    ],
+    "delay": 10
   }
 }
