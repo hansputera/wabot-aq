@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.18.10",
-    "@babel/preset-env": "^7.18.10",
-    "eslint": ">=5.16.0",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "eslint": "^8.23.1",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
@@ -47,6 +47,6 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "gampang": "1.0.1-beta.3"
+    "gampang": "1.0.1-beta.7"
   }
 }
