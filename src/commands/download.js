@@ -7,12 +7,12 @@ import { Blob } from 'buffer';
  * @param {Client} bot - The client object.
  * @return {Promise<void>}
  */
-export default async function FunCommands(bot) {
+export default async function DownloadCommands(bot) {
   bot.command(
     'youtube',
     {
       'description': 'Download Youtube Music Or Video.',
-      aliases: ['ytdl'],
+      aliases: ['ytdl', 'play'],
       category: 'Download',
     },
     async (ctx) => {
