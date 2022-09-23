@@ -1,3 +1,4 @@
+const { SessionManager } = require('gampang');
 const path = require('node:path');
 
 module.exports = {
@@ -10,5 +11,5 @@ module.exports = {
     },
   },
   'prefixes': ['.'], // Prefixes for the commands
-  'sessionPath': './sessions', // Path to the sessions folder
+  'sessionPath': new SessionManager('sessions', 'folder'), // Setup your session
 };
