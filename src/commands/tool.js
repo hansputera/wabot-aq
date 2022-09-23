@@ -9,11 +9,6 @@ import sharp from 'sharp';
 export default async function ToolCommands(bot) {
   bot.command(
     'toimage',
-    {
-      description: 'Convert sticker to image',
-      aliases: ['toimg'],
-      category: 'Tool',
-    },
     async (ctx) => {
       if (!ctx.getReply())
         return ctx.reply(
@@ -44,15 +39,15 @@ export default async function ToolCommands(bot) {
         );
       }
     },
+    {
+      description: 'Convert sticker to image',
+      aliases: ['toimg'],
+      category: 'Tool',
+    },
   );
 
   bot.command(
     'tosticker',
-    {
-      description: 'Convert image to sticker',
-      aliases: ['tostkr'],
-      category: 'Tool',
-    },
     async (ctx) => {
       if (!ctx.image)
         return ctx.reply(
@@ -69,6 +64,11 @@ export default async function ToolCommands(bot) {
           'Something was wrong, try again please?\n' + 'Error: ' + e.message,
         );
       }
+    },
+    {
+      description: 'Convert image to sticker',
+      aliases: ['tostkr'],
+      category: 'Tool',
     },
   );
 }

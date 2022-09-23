@@ -49,7 +49,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "gampang": "1.1.0-beta.2",
+    "gampang": "1.1.0-beta.5",
     "sharp": "^0.31.0",
     "ytdl-core": "^4.11.2"
   },

@@ -10,11 +10,6 @@ import { Blob } from 'buffer';
 export default async function DownloadCommands(bot) {
   bot.command(
     'youtube',
-    {
-      'description': 'Download Youtube Music Or Video.',
-      aliases: ['ytdl', 'play'],
-      category: 'Download',
-    },
     async (ctx) => {
       const [link] = ctx.args;
       const [mediaType] = ctx.flags;
@@ -68,6 +63,11 @@ export default async function DownloadCommands(bot) {
           ctx.reply('Silahkan coba kembali!');
         }
       });
+    },
+    {
+      'description': 'Download Youtube Music Or Video.',
+      aliases: ['ytdl', 'play'],
+      category: 'Download',
     },
   );
 }

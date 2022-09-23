@@ -13,7 +13,7 @@ const loader = new Loader(bot, path.resolve(__dirname, 'commands'));
 bot.on('ready', () => {
   bot.logger.info('Bot is ready to use!');
   bot.logger.info(
-    'Logged in as: ' + bot.raw.user.name || bot.raw.user.id || 'WHATSAPP_BOT',
+    `Logged in as: ${bot.raw.user.name || bot.raw.user.id || 'WHATSAPP_BOT'}`,
   );
 });
 
