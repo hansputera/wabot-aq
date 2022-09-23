@@ -7,7 +7,7 @@ specifiers:
   eslint: ^8.23.1
   eslint-config-google: ^0.14.0
   eslint-config-prettier: ^8.5.0
-  gampang: 1.1.0-beta.1
+  gampang: 1.1.0-beta.2
   husky: ^8.0.1
   nodemon: ^2.0.20
   prettier: ^2.7.1
@@ -16,7 +16,7 @@ specifiers:
   ytdl-core: ^4.11.2
 
 dependencies:
-  gampang: 1.1.0-beta.1_sharp@0.31.0
+  gampang: 1.1.0-beta.2_sharp@0.31.0
   sharp: 0.31.0
   ytdl-core: 4.11.2
 
@@ -2132,8 +2132,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /gampang/1.1.0-beta.1_sharp@0.31.0:
-    resolution: {integrity: sha512-72pHWg8hu9RHttF1JphzVWEcs0LRHUCa891KLldEPViD/cbwwAWkczk64DXgau6aqtcfjOwXnr7fOJVZerY25w==}
+  /gampang/1.1.0-beta.2_sharp@0.31.0:
+    resolution: {integrity: sha512-65iOCI7XqqMxsieCihX+MmgirrPPo+4pMSTfDpeT2aBZbE/LVik8fPwn5BXjmg898BUr+7jYBJqnoF6MomjNMg==}
     dependencies:
       '@adiwajshing/baileys': 4.4.0_sharp@0.31.0
       long: 5.2.0
