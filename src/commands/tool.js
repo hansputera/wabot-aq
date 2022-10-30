@@ -48,13 +48,14 @@ export default async function ToolCommands(bot) {
   bot.command(
     'tosticker',
     async (ctx) => {
-      if (!ctx.image)
+      const image = ctx.getReply().image
+      if (!image)
         return ctx.reply(
           'Silahkan reply pesan yang mengandung gambar terlebih dahulu!',
         );
 
       try {
-        const mediaDecrypted = await ctx.image.retrieveFile();
+        const mediaDecrypted = await image.retrieveFile('image');
         const converted = await sharp(mediaDecrypted).webp().toBuffer();
 
         await ctx.replyWithSticker(converted);
