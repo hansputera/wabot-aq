@@ -1,7 +1,7 @@
 /** @typedef {import('gampang').Client} Client */
 
 import sharp from 'sharp';
-import { fetch, validateURL } from "../util";
+import { fetch, validateURL } from '../util';
 
 /**
  * @param {Client} bot - The client object.
@@ -49,7 +49,7 @@ export default async function ToolCommands(bot) {
   bot.command(
     'tosticker',
     async (ctx) => {
-      const image = ctx.getReply().image
+      const image = ctx.getReply().image;
       if (!image)
         return ctx.reply(
           'Silahkan reply pesan yang mengandung gambar terlebih dahulu!',
@@ -73,30 +73,34 @@ export default async function ToolCommands(bot) {
     },
   );
 
-  bot.command(
-    'TsToWs',
-    async (ctx) => {
-      let input = ctx.args
-      if (input.length) {
-        input = input[0]
-        const isUrl = validateURL(input)
-        if (isUrl && input.startsWith("https://t.me/addstickers/")) {
-          input = input.slice(25, input.length)
-        }
-        try {
-          const hasil = await fetch(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=${input}`);
-          for (let i = 0; i < hasil.result.stickers.length; i++) {
-              const fileId = hasil.result.stickers[i].thumb.file_id;
-              const path = await fetch(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`);
-              ctx.replyWithSticker(`https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/${path.result.file_path}`, { isAnimated: path.result.file_path.split(".")[1] === "webm" })
-          }
-        } catch(e) {
-          console.log(e);
-          ctx.reply("Maaf, terjadi kesalahan")
-        }
-      } else {
-        ctx.reply("Silahkan kirim link sticker telegram atau nama stickernya!")
+  bot.command('TsToWs', async (ctx) => {
+    let input = ctx.args;
+    if (input.length) {
+      input = input[0];
+      const isUrl = validateURL(input);
+      if (isUrl && input.startsWith('https://t.me/addstickers/')) {
+        input = input.slice(25, input.length);
       }
+      try {
+        const hasil = await fetch(
+          `https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=${input}`,
+        );
+        for (let i = 0; i < hasil.result.stickers.length; i++) {
+          const fileId = hasil.result.stickers[i].thumb.file_id;
+          const path = await fetch(
+            `https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`,
+          );
+          ctx.replyWithSticker(
+            `https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/${path.result.file_path}`,
+            { isAnimated: path.result.file_path.split('.')[1] === 'webm' },
+          );
+        }
+      } catch (e) {
+        console.log(e);
+        ctx.reply('Maaf, terjadi kesalahan');
+      }
+    } else {
+      ctx.reply('Silahkan kirim link sticker telegram atau nama stickernya!');
     }
-  )
+  });
 }
